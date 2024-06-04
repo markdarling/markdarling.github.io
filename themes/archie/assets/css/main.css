@@ -27,8 +27,8 @@ body{
 }
 
 p {
-  font-family: 'Fira Sans', sans-serif;
-  line-height: 1.5;
+  font-family: "Questrial", sans-serif;
+  line-height: 1.6;
 }
 
 hr {
@@ -49,7 +49,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+nav a {
+  margin-right: 10px;
+}
 ul {
   list-style: none;
   padding-left: 2ch;
