@@ -1,14 +1,15 @@
 /* Markdown */
 :root{
---maincolor: red;
+--maincolor: rgb(35, 18, 93);
 --bordercl:rebeccapurple;
 --callouctcolor:dodgerblue;
---hovercolor:navy;
 --darkMaincolor: #50fa7b;
 }
 html {
   color: #232333;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 15px;
   line-height: 1.6em;
 }
@@ -44,13 +45,9 @@ blockquote {
 }
 
 a {
-  border-bottom: 3px solid var(--maincolor);
+  border-bottom: 1px solid var(--maincolor);
   color: inherit;
   text-decoration: none;
-}
-a:hover {
-    background-color: var(--hovercolor);
-    color: #fff;
 }
 
 ul {
@@ -149,13 +146,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2em;
 }
 
-h1::before { color: var(--maincolor); content: '# '; }
-h2::before { color: var(--maincolor); content: '## '; }
-h3::before { color: var(--maincolor); content: '### '; }
-h4::before { color: var(--maincolor); content: '#### '; }
-h5::before { color: var(--maincolor); content: '##### '; }
-h6::before { color: var(--maincolor); content: '###### '; }
-
 .meta {
   color: #999;
   letter-spacing: -0.5px;
@@ -165,7 +155,6 @@ h6::before { color: var(--maincolor); content: '###### '; }
 footer {
   display: flex;
   align-items: center;
-  border-top: 0.4rem dotted var(--bordercl);
   padding: 2rem 0rem;
   margin-top: 2rem;
 }
@@ -229,15 +218,8 @@ justify-content: space-between;
 .tags a{
   border-bottom: 3px solid var(--maincolor); 
 }
-.tags a:hover{
-  color:white;
-  background-color: var(--hovercolor); 
-}
 svg{
   max-height: 15px;
-}
-.soc:hover{
-  color: white;
 }
 .draft-label{ 
     color: var(--bordercl);
