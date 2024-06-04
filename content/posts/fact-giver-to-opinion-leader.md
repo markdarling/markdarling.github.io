@@ -1,7 +1,7 @@
 ---
 title: 'From Fact-Giver to Opinion Leader: Mastering the Art of Engineering Leadership'
 date: 2024-07-04T11:18:05+01:00
-draft: true
+draft: false
 ---
 
 As an engineering lead, guiding your team with technical expertise is only part of the equation. Transitioning from merely sharing facts to providing clear, opinionated direction is essential for ensuring project success and fostering a high-performing team. This shift is not always easy, but it is crucial. Here’s how to master the transformation from fact-giver to opinion leader.
