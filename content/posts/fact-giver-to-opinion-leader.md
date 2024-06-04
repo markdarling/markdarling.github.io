@@ -1,5 +1,6 @@
 ---
 title: 'From Fact-Giver to Opinion Leader: Mastering the Art of Engineering Leadership'
+slug: 'fact-giver-to-opinion-leader'
 date: 2024-06-04T12:13:32
 ---
 
