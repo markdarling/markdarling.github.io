@@ -3,9 +3,6 @@ title: 'From Fact-Giver to Opinion Leader'
 slug: 'fact-giver-to-opinion-leader'
 date: 2024-06-04T12:13:32
 ---
-
-# Empowering Your Team: Transitioning from Fact-Giver to Opinion Leader
-
 ## Introduction
 
 As an engineering lead, you hold a crucial role in guiding your team not just with technical expertise, but with clear and actionable opinions that shape the direction of your projects. However, many engineering leaders struggle to transition from providing pure technical facts to articulating strong, opinionated guidance on how these facts should be applied in practice. This transformation is essential for leading a high-performing team and ensuring the success of your projects.
