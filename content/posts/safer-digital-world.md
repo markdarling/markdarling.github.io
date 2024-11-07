@@ -1,10 +1,8 @@
 ---
-title: 'A Call for a Safer Digital World - A Unified Approach to Blocking Abuse Across Platforms'
+title: 'Open Letter: A Call for a Safer Digital World - A Unified Approach to Blocking Abuse Across Platforms'
 slug: 'a-call-for-a-safer-digital-world'
 date: 2024-11-07T15:20:32
 ---
-# Open Letter: A Call for a Safer Digital World – A Unified Approach to Blocking Abuse Across Platforms
-
 To all those who have ever felt powerless in the face of online abuse,
 
 Imagine this: You’re trying to remove someone toxic from your life—someone who’s harassed, hurt, or violated your trust in ways that cut deeply. You block them on one app, feeling a momentary sigh of relief, only to open another app and see another message, another friend request, another reminder that they’re just a tap away. You repeat the blocking process on app after app, but they always find a way back, slipping through the cracks in our digital defenses.
