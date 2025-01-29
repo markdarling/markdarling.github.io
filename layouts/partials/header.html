@@ -1,10 +1,40 @@
+{{ $title := "" }}
+{{ $description := "" }}
+{{ $keywords := "" }}
+{{ $ogImage := "" }}
+
+{{ if .IsHome }}
+    {{ $title = .Site.Title }}
+    {{ $description = "Digital Innovator, Engineering Leader, and Mobile Development Expert. Sharing insights on technology, leadership, and building scalable solutions." }}
+    {{ $keywords = "Mark Darling, Engineering Leader, Mobile Development, Digital Innovation, Technology Leadership" }}
+{{ else if eq .Section "blog" }}
+    {{ if .IsSection }}
+        {{ $title = "Blog" }}
+        {{ $description = "Insights on technology, leadership, and building scalable solutions from Mark Darling" }}
+    {{ else }}
+        {{ $title = .Title }}
+        {{ $description = .Description | default .Summary }}
+    {{ end }}
+{{ else }}
+    {{ $title = .Title }}
+    {{ with .Description }}
+        {{ $description = . }}
+    {{ else }}
+        {{ $description = .Summary }}
+    {{ end }}
+{{ end }}
+
+{{ $ogImage = "profile.png" }}
+{{ with .Params.image }}
+    {{ $ogImage = . }}
+{{ end }}
+
 <head lang="{{ .Site.Language.Lang }}">
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
-	<title>{{ $siteTitle }} | Digital Innovator | Engineering Leader | Reluctant Perfectionist</title>
+	<title>{{ $title }} | Digital Innovator | Engineering Leader | Reluctant Perfectionist</title>
 	{{- else -}}
 	<title>{{ $title }} - {{ $siteTitle }}</title>
 	{{- end -}}
@@ -14,8 +44,36 @@
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
+	<meta name="description" content="{{ $description }}" />
+	<meta name="author" content="{{ .Site.Title }}">
+	<meta name="robots" content="index, follow">
+
+	<!-- Primary Meta Tags -->
+	{{- if .IsHome -}}
+	<meta name="title" content="{{ $title }}">
+	{{- else -}}
+	<meta name="title" content="{{ $title }} - {{ $siteTitle }}">
+	{{- end -}}
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+	<meta property="og:url" content="{{ .Permalink }}">
+	<meta property="og:title" content="{{ $title }}">
+	<meta property="og:description" content="{{ $description }}">
+	<meta property="og:image" content="{{ absURL $ogImage }}">
+	<meta property="og:site_name" content="{{ $siteTitle }}">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="{{ .Permalink }}">
+	<meta name="twitter:title" content="{{ $title }}">
+	<meta name="twitter:description" content="{{ $description }}">
+	<meta name="twitter:image" content="{{ absURL $ogImage }}">
+	<meta name="twitter:creator" content="@markdarling">
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href="{{ .Permalink }}">
+
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
@@ -115,4 +173,49 @@
 	<script src="{{ absURL . }}"></script>
 	{{- end }}
 	{{- end }}
+
+	<!-- Structured Data -->
+	{{- if .IsHome -}}
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Person",
+		"name": "Mark Darling",
+		"url": "{{ .Site.BaseURL }}",
+		"sameAs": [
+			"https://twitter.com/markdarling",
+			"https://github.com/markdarling",
+			"https://instagram.com/markdarling"
+		],
+		"jobTitle": "Engineering Leader",
+		"description": "{{ $description }}"
+	}
+	</script>
+	{{- else if eq .Section "blog" -}}
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		{{- if .IsSection -}}
+		"@type": "Blog",
+		"name": "Mark Darling's Blog",
+		"description": "{{ $description }}"
+		{{- else -}}
+		"@type": "BlogPosting",
+		"headline": "{{ .Title }}",
+		"image": "{{ absURL $ogImage }}",
+		"datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+		"dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+		"author": {
+			"@type": "Person",
+			"name": "Mark Darling"
+		},
+		"publisher": {
+			"@type": "Person",
+			"name": "Mark Darling"
+		},
+		"description": "{{ $description }}"
+		{{- end -}}
+	}
+	</script>
+	{{- end -}}
 </head>

@@ -1,7 +1,21 @@
+# Site Settings
 baseURL = "https://www.markdarling.com"
 languageCode = "en-gb"
 title = "Mark Darling"
 copyright = "© Mark Darling"
+
+# SEO Settings
+enableRobotsTXT = true
+canonifyURLs = true
+enableGitInfo = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
 
 # Code Highlight
 pygmentsstyle = "monokai"
@@ -20,8 +34,11 @@ pygmentscodefencesguesssyntax = true
 #	subtitle = ""
 	mainSections = ["blog"]
 	showReadingTime = true
+	description = "Digital Innovator and Engineering Leader specializing in mobile development and scalable solutions. Sharing insights on technology, leadership, and building high-performing teams."
+	images = ["profile.png"]
+	keywords = ["Engineering Leadership", "Mobile Development", "Technology", "Digital Innovation", "Software Engineering"]
 
-# Social Tags (uncommented for basic setup)
+# Social Media
 [[params.social]]
 name = "GitHub"
 icon = "github"
