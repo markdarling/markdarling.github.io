@@ -18,7 +18,7 @@ pygmentscodefencesguesssyntax = true
 	mode="light" # color-mode → light,dark,toggle or auto
 	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
 #	subtitle = ""
-	mainSections = ["posts"]
+	mainSections = ["blog"]
 	showReadingTime = true
 
 # Social Tags (uncommented for basic setup)
@@ -40,5 +40,5 @@ url = "https://instagram.com/markdarling/"
 # Main menu Items
 [[menu.main]]
 name = "Blog"
-url = "/posts"
+url = "/blog"
 weight = 1
