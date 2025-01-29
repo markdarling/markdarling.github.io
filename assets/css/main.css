@@ -280,6 +280,22 @@ blockquote {
 .meta {
   color: #999;
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.reading-time {
+  color: #666;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 200;
+}
+
+.reading-time::before {
+  content: "•";
+  margin-right: 0.5rem;
 }
 
 .post-container {

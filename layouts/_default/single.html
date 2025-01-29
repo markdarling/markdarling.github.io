@@ -6,7 +6,9 @@
         <!-- Main Content -->
         <div class="post-content">
             <h1 class="title">{{ .Title }}</h1>
-            <time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+            <time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>{{ if .Site.Params.showReadingTime }}
+            <span class="reading-time">{{ .ReadingTime }} min read</span>
+            {{ end }}
           {{ if isset .Params "tldr" }}
           <div class="tldr">
             <strong>tl;dr:</strong>
