@@ -40,8 +40,8 @@ body {
 
 /* Typography */
 p {
-  font-family: 'Fira Sans', sans-serif;
   line-height: 1.5;
+  font-weight: 200;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,10 +53,15 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid #eee;
 }
 
 a:hover {
   color: var(--hovercolor);
+}
+
+header a, .readmore,footer a {
+  border-bottom: none;
 }
 
 /* Lists */
@@ -128,7 +133,7 @@ header nav a:first-child {
   min-width: 0;
 }
 
-.title h1 {
+.title {
   margin-bottom: 0;
 }
 
@@ -632,7 +637,13 @@ header nav a:first-child {
 h1, h2, h3, h4, h5, h6 {
   font-size: 1.2rem;
   margin-top: 2em;
+  font-weight: 200;
 }
+
+a {
+  font-weight: 200;
+}
+
 
 h1::before { content: ''; }
 h2::before { content: ''; }
@@ -758,6 +769,7 @@ footer {
 
 time {
   color: grey;
+  font-weight: 200;
 }
 
 /* Posts */
@@ -959,7 +971,7 @@ table td {
 
 .intro-section h2 {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 200;
   color: #000;
   margin: 0 0 1rem 0;
 }
@@ -1147,3 +1159,26 @@ table td {
     max-width: 550px;
   }
 }
+
+/* Profile Image */
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  margin-bottom: 2rem;
+}
+
+/* Intro Section Styles */
+.intro-section {
+  padding: 1rem 0;
+  max-width: 800px;
+}
+
+strong {
+  font-weight: 300;
+}
+
+li { font-weight: 200; }
