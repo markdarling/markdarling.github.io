@@ -70,12 +70,8 @@ ul {
   padding-left: 0;
 }
 
-ul li {
-  text-indent: -2ch;
-}
 
 ul > li::before {
-  content: '* ';
   font-weight: bold;
 }
 
@@ -322,9 +318,7 @@ blockquote {
   justify-content: space-between;
 }
 
-.tags li::before {
-  content: "🏷 ";
-}
+
 
 .tags a {
   border-bottom: 3px solid var(--maincolor);
@@ -847,9 +841,7 @@ article .title {
   justify-content: space-between;
 }
 
-.tags li::before {
-  content: "🏷 ";
-}
+
 
 .tags a {
   border-bottom: 3px solid var(--maincolor);
