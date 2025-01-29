@@ -1,0 +1,23 @@
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Let’s Keep in Touch</h3>
+            <p>There’s always more to discover—whether it’s my latest project, thoughts on leadership, or random musings about life. Feel free to explore, connect, or just say hi!</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="/posts">Blog</a>
+            <a href="mailto:mark@markd.net">Email</a>
+            {{ range .Site.Params.Social }}
+            <a href="{{ .url }}" class="soc">{{ .name }}</a>
+            {{ end }}
+        </div>
+
+        <div class="footer-copyright">
+            {{ .Site.Copyright }}
+        </div>
+    </div>
+</footer>
+{{ if not hugo.IsServer }}
+{{ template "_internal/google_analytics.html" . }}
+{{ end }}

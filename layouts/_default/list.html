@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main>
+	<div class="content-section">
+		{{ if isset .Data "Term" }}
+		<h1>Entries tagged - "{{ .Data.Term }}"</h1>
+		{{ else }}
+
+		{{ end }}
+
+		<ul class="posts">
+			{{- range .Data.Pages -}}
+				{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+				<section class="list-item">
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+					<br>{{ template "partials/pagedescription.html" . }}
+					<a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a>
+				</section>
+				{{- end -}}
+			{{- end -}}
+		</ul>
+	</div>
+</main>
+{{ end }}
