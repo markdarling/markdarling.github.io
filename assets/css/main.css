@@ -1182,3 +1182,7 @@ strong {
 }
 
 li { font-weight: 200; }
+
+.description {
+  font-weight: 200;
+}
