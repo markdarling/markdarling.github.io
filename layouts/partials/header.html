@@ -180,14 +180,19 @@
 	{
 		"@context": "http://schema.org",
 		"@type": "Person",
-		"name": "Mark Darling",
+		"name": "{{ .Site.Params.author }}",
 		"url": "{{ .Site.BaseURL }}",
 		"sameAs": [
-			"https://twitter.com/markdarling",
-			"https://github.com/markdarling",
-			"https://instagram.com/markdarling"
+			"https://twitter.com/{{ .Site.Params.twitterCreator }}",
+			"https://github.com/{{ .Site.Params.githubProfile }}",
+			"https://linkedin.com/in/{{ .Site.Params.linkedinProfile }}",
+			"https://instagram.com/{{ .Site.Params.facebookAuthor }}"
 		],
-		"jobTitle": "Engineering Leader",
+		"jobTitle": "{{ .Site.Params.jobTitle }}",
+		"worksFor": {
+			"@type": "Organization",
+			"name": "{{ .Site.Params.organization }}"
+		},
 		"description": "{{ $description }}"
 	}
 	</script>
@@ -197,23 +202,39 @@
 		"@context": "http://schema.org",
 		{{- if .IsSection -}}
 		"@type": "Blog",
-		"name": "Mark Darling's Blog",
-		"description": "{{ $description }}"
+		"name": "{{ .Site.Title }}'s Blog",
+		"description": "{{ $description }}",
+		"url": "{{ .Permalink }}",
+		"author": {
+			"@type": "Person",
+			"name": "{{ .Site.Params.author }}"
+		}
 		{{- else -}}
 		"@type": "BlogPosting",
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "{{ .Permalink }}"
+		},
 		"headline": "{{ .Title }}",
 		"image": "{{ absURL $ogImage }}",
 		"datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
 		"dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
 		"author": {
 			"@type": "Person",
-			"name": "Mark Darling"
+			"name": "{{ .Site.Params.author }}",
+			"url": "{{ .Site.BaseURL }}"
 		},
 		"publisher": {
 			"@type": "Person",
-			"name": "Mark Darling"
+			"name": "{{ .Site.Params.author }}",
+			"url": "{{ .Site.BaseURL }}"
 		},
-		"description": "{{ $description }}"
+		"description": "{{ $description }}",
+		{{- with .Params.keywords -}}
+		"keywords": "{{ delimit . ", " }}",
+		{{- end -}}
+		"wordCount": "{{ .WordCount }}",
+		"timeRequired": "PT{{ .ReadingTime }}M"
 		{{- end -}}
 	}
 	</script>
