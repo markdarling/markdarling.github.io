@@ -247,7 +247,7 @@ footer {
 }
 
 .footer-links {
-  display: flex;
+  display: block;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -257,6 +257,7 @@ footer {
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.05em;
+  margin-right: 1rem;
 }
 
 .footer-links a:hover {
