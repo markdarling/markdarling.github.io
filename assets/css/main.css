@@ -73,6 +73,11 @@ ul {
   font-weight: 200;
 }
 
+ol li {
+  list-style: decimal;
+  padding-left: 18px;
+  font-weight: 200;
+}
 
 ul > li::before {
   font-weight: bold;
