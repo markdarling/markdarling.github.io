@@ -3,9 +3,6 @@ title: 'Snake 2025: How AI is Rewriting the Rules of Software Engineering'
 slug: 'snake-2025'
 date: 2025-02-26T19:13:32
 ---
-
-# Snake 2025: How AI is Rewriting the Rules of Software Engineering
-
 **Have you ever wondered what it would take to bring a classic game like Snake into the 3D world? A few months ago, the answer might have involved weeks of coding, 3D modeling expertise, and deep knowledge of game development frameworks.**
 
 But that was before. Before AI coding assistants reached their current capabilities. Before the rules of software engineering began to change right under our feet.
