@@ -68,8 +68,9 @@ header a, .readmore, footer a {
 
 /* Lists */
 ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: circle;
+  padding-left: 18px;
+  font-weight: 200;
 }
 
 
