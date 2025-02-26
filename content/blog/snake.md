@@ -2,6 +2,7 @@
 title: 'Snake 2025: How AI is Changing Software Engineering'
 slug: 'snake-2025'
 date: 2025-02-26T19:13:32
+draft: true
 ---
 **Remember Snake? That game we all played on old Nokia phones? I wondered if I could build a 3D version of it using just AI tools. Turns out, I could.**
 
